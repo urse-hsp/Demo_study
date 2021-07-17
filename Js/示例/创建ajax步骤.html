@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="getData()">请求数据</button>
+		<script type="text/javascript">
+			function getData(){
+				//			创建Ajax步骤:
+				//			1创建Ajax对象
+				//			2连接到服务器
+				//			3发送请求
+				//			4接收返回值
+							
+							//1创建ajax对象
+							if(window.XMLHttpRequest){
+								var oAjax = new XMLHttpRequest();//IE7+、其他浏览器
+							}else{
+								var oAjax = new ActiveXObject("Microsoft.XMLHTTP");//IE5和IE6
+							}
+							
+							//2连接到服务器
+				//			open(方法，文件名，同步异步)
+				//			参数一：post/get
+				//			安全性:post更安全
+				//			传参:post在接口地址中不可见;get直接将参数拼接在接口地址后面,保留在浏览器中,可以被直接看到
+				//			编码不同:post使用二进制多重编码,更安全
+				//			get对数据长度有限制:当发送数据时，GET 方法向 URL 添加数据；URL 的长度是受限制的（URL 的最大长度是 2048 个字符）;post对数据长度无限制(post更灵活)
+				
+				//			1、Get是用来从服务器上获得数据，而Post是用来向服务器上传递数据。
+				//			2、Get将表单中数据的按照variable=value的形式，添加到action所指向的URL后面，并且两者使用“?”连接，而各个变量之间使用“&”连接；Post是将表单中的数据放在form的数据体中，按照变量和值相对应的方式，传递到action所指向URL。
+				//			3、Get是不安全的，因为在传输过程，数据被放在请求的URL中，而Post的所有操作对用户来说都是不可见的。
+				//			4、Get传输的数据量小；而Post可以传输大量的数据，
+				//			5、Get限制Form表单的数据集的值必须为ASCII字符；而Post支持整个ISO10646字符集。默认是用ISO-8859-1编码
+				//			6、Get是Form的默认方法
+				
+				//			参数二：请求的文件名
+				//			参数三：同步（false）  异步（true）
+							oAjax.open("GET","./data/test.txt",true);
+							
+							
+							//3向服务器发送请求
+							oAjax.send();
+							
+							//4接收返回值
+				//			onreadystatechange意思是当与服务器发生交互时，会发生的事件
+				//			readyState：告诉我们浏览器和服务器进行到哪一步了
+				//			从 0 到 4 发生变化。
+				//			0: 请求未初始化（还没有调用到open方法）
+				//			1: 服务器连接已建立（已调用send方法，正在发生请求）
+				//			2: 请求已接收（send方法完成，已接收到全部响应内容）
+				//			3: 请求处理中（解析响应内容）
+				//			4: 请求已完成，且响应已就绪
+				//			status	
+				//			200: "OK"
+				//			404: 未找到页面
+							oAjax.onreadystatechange=function(){//ajax与服务器交互时触发的事件
+								if (oAjax.readyState==4 && oAjax.status==200){//服务器将数据返回给oAjax
+										console.log(oAjax);
+								}
+								else{
+										console.log(oAjax.status);
+								}
+							}
+			}
+
+
+			
+
+
+
+
+		</script>
+	</body>
+</html>

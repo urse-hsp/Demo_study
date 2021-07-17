@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>绘制阴景</title>
+  <style>
+	*{padding:0;margin:0;}
+	.container{width:600px;margin:20px auto;}
+  </style>
+ </head>
+ <body>
+  <div class="container">
+	<canvas id="canvas" height="600" width="600"></canvas>
+  </div>
+ </body>
+ <script>
+	//获得画布 对象
+	var canvas = document.getElementById("canvas");
+	var context = canvas.getContext("2d");
+
+	//设置渐变
+	var g = context.createLinearGradient(0,0,200,0);
+	g.addColorStop(0,'rgb(255,0,0)');//红
+	g.addColorStop(0.5,'rgb(0,255,0)');//绿
+	g.addColorStop(1,'rgb(0,0,255)');//蓝
+	context.strokeStyle = g;
+
+	//绘制阴影
+	context.shadowOffsetX = 15;
+	context.shadowOffsetY = 18;
+	context.shadowColor = 'rgba(100,100,100,0.5)';
+	context.shadowBlur = 5;
+	
+	//绘制渐变线段
+	context.save();
+	context.moveTo(10,30);
+	context.lineTo(180,160);
+	context.lineWidth=5;
+	context.stroke();
+	context.restore();
+
+	//绘制渐变矩形
+	context.beginPath();
+	context.save();
+	context.fillStyle = g;
+	context.fillRect(0,200,200,100);
+	context.restore();
+
+	//绘制渐变圆形
+	context.save();
+	context.fillStyle = g;
+	context.arc(100,450,100,0,Math.PI*2);
+	context.fill();
+	context.restore();
+	context.closePath();
+	
+ </script>
+</html>

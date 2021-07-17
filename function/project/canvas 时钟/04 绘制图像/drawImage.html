@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>drawImage方法</title>
+  <style>
+	*{padding:0;margin:0;}
+	.container{width:800px;margin:20px auto; border:1px #BD3E00 solid;}
+  </style>
+ </head>
+ <body>
+  <div class="container">
+	<canvas id="canvas" height="600" width="800"></canvas>
+  </div>
+ </body>
+ <script>
+	//获得画布 对象
+	var canvas = document.getElementById("canvas");
+	var context = canvas.getContext("2d");
+	
+
+	//设置图形
+	var img = new Image();
+	img.src = "img/html5.jpg";
+	img.onload = function(){
+		/*  drawImage(image,x,y)  */
+		   context.drawImage(img,10,10);
+		   
+		/*  drawImage(image,x,y,w,h)  */
+		context.drawImage(img,530,10,200,150);
+		
+		/*  drawImage(image,dx,dy,dw,dh,cx,cy,cw,ch)  */
+		context.drawImage(img,130,20,250,340,530,180,250,340);
+	};
+	
+	
+ </script>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet/less" href="css/login.less" type="text/css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/font_4nwghu9wqbe/iconfont.css"/>
+    <link rel="stylesheet" href="css/font_9qkyhgqpqwc/iconfont.css"/>
+</head>
+<body>
+<header>
+    <div class="header_top">
+        <p>中国移动 3G</p>
+        <div class="right-top">
+            <span class="iconfont icon-clock"></span>
+            <span class="iconfont 3G-Network icon-G-Network"></span>
+            <span class="iconfont icon-dianliang"></span>
+            <span>16:25</span>
+        </div>
+    </div>
+    <div class="nav">
+       <div class="item_nav" id="back"> <a href="home.html"></a></div>
+        <div class="item_nav">登录</div>
+        <div class="item_nav"><a href="register.html">注册</a></div>
+    </div>
+</header>
+<article>
+    <div class="form">
+         <form method="post" action="index.html">
+         <div><label>登录名</label><input type="text" placeholder="手机号码/用户名/邮箱" required id="uName" name="uName" pattern="[A-Za-z0-9]{6,10}"/><span class="icon-form-top"></span></div>
+         <div><label>密码</label> <input type="password" placeholder="登录密码" required id="pwd" pattern="[A-Za-z0-9]{6,12}" name="pwd"/><span class="icon-form-bottom"></span></div>
+         <div class="button-form"><button>登录</button></div>
+         <div class="form-bottom">
+             <a href="javascript:void (0)">登录遇到问题？</a>
+             <a href="javascript:void (0)">境外手机登录</a>
+         </div>
+         </form>
+    </div>
+</article>
+<footer>
+    <div class="footer">
+        <span class="iconfont icon-weixin "></span>
+        <span class="iconfont icon-QQ"></span>
+        <span class="iconfont icon-icon-test"></span>
+        <span class="iconfont icon-weibo-red"></span>
+        <span class="iconfont icon-baidu"></span>
+    </div>
+</footer>
+
+<script src="js/less.js"></script>
+<script src="js/flexible.js"></script>
+<script src="js/zepto.js"></script>
+<script src="js/touch.js"></script>
+<script type="text/javascript">
+
+            Zepto(function (){
+
+                var form=document.querySelector("form");
+
+                //给form添加无效运行时的事件
+                form.addEventListener("invalid",function (e){
+
+                    var item= e.target;     //获取当前无效的标签
+                    //获取 validityState 对象
+                    var validityState= item.validity;
+
+                    var name=item.name;    //根据name属性查找要验证的元素
+
+                    switch (name){
+                        case "uName":
+                            if(validityState.valueMissing){
+                                item.setCustomValidity("用户名不能为空");
+                            }else{
+                                if(validityState.patternMismatch){
+                                    item.setCustomValidity("用户名为字母或数字，并且长度在6~10之间");
+                                }
+                            }
+                            break;
+                        case "pwd":
+                            if(validityState.valueMissing){
+                                item.setCustomValidity("密码不能为空");
+                            }else{
+                                if(validityState.patternMismatch){
+                                    item.setCustomValidity("密码为6~12位大小写字母、数字");
+                                }
+                            }
+                            break;
+                    }
+
+
+                },true);
+
+                //提交
+                form.onsubmit=function (){
+
+                    //用户名
+                    var $userName=$("#uName").val();
+                    //密码
+                    var $password=$("#pwd").val();
+
+
+                    if($userName==localStorage.getItem("userName")&&$password==localStorage.getItem("password")){
+
+                        //跳转首页
+                        alert("恭喜你登录成功！");
+                    }else{
+                        alert("您输入的用户名或密码不正确，请重新登录！");
+                    }
+
+                };
+
+                //输入时候取消验证
+                form.addEventListener("input",function(e){
+
+                    var item= e.target;
+
+                    item.setCustomValidity("");  //清除验证信息
+
+                },true);
+
+
+
+                $(".icon-form-top").tap(function (){
+
+                    $("#uName").val(""); //清空
+
+                });
+
+
+                var $pwd=$("#pwd"); //获取元素
+                $(".icon-form-bottom").tap(function (){
+                    if($pwd.attr("type")=="password"){
+                        $pwd.attr("type","text");
+                    }else if($("#pwd").attr("type")=="text"){
+                        $pwd.attr("type","password");
+                    }
+                });
+
+               })
+
+
+
+</script>
+</body>
+</html>

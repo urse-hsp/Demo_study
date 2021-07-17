@@ -1,0 +1,57 @@
+<app-head></app-head>
+
+<p>home works! {{ title }}</p>
+<h4>{{ username }}</h4>
+<h5 [title]="student">{{ student }}</h5>
+
+<p>{{ userInfo.name }}</p>
+
+<div title="牛逼666啊">
+  吊
+  {{ content }}
+</div>
+
+<div innerhtml="content"></div>
+
+<p>----------------------------------</p>
+<!-- 数组循环 -->
+<ul>
+  <!-- <p>{{Arrays}}</p> -->
+  <!-- <li ng-repeat="item of Arrays">{{item.name}}</li> -->
+  <li *ngFor="let item of Arrays; let i = index">{{ item.name }}</li>
+</ul>
+
+<!-- if判断语句 -->
+<div *ngIf="flag">123</div>
+
+<!-- ngSwitch -->
+
+<div>
+  <span [ngSwitch]="orderStatus">
+    <p *ngSwitchCase="1">已经支付</p>
+    <p *ngSwitchCase="2">支付确认订单</p>
+    <p *ngSwitchCase="3">已经发货</p>
+    <p *ngSwitchDefault>无效订单</p>
+  </span>
+</div>
+
+<!-- 属性[ngClass] [ngStyle] -->
+<div [ngClass]="{ ess: true }">就这？</div>
+
+<div [ngStyle]="{ color: 'yellow' }">就这？2</div>
+
+<!-- 日期转换 -->
+<p>{{ today | date: "yyyy-MM-dd HH:mm:ss" }}</p>
+
+<!-- 点击事件 -->
+
+<button (click)="expression()">点击啊</button>
+
+<!-- 表单事件 事件对象 -->
+
+<input type="text" (keydown)="keyDowns($event)" />
+<input type="text" (keyup)="keyup($event)" />
+
+<!-- 双向数据绑定 -->
+<p>{{ keywords }}</p>
+<input type="text" [(ngModel)]="keywords" />

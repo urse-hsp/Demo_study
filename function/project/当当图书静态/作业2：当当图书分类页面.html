@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>制作当当网图书分类页面</title>
+		<link href="css/dangdang.css" rel="stylesheet" type="text/css"/>
+		<style>
+			*{
+							padding: 0px;
+							margin: 0px auto;
+							box-sizing: border-box;
+						}
+						.wrap{
+							width: 1200px;
+							clear: both;
+						}
+						 .header{background:#f9f9f9;}
+						.header-introduce{
+							font-size: 13px;
+							line-height: 30px;
+							background:#f9f9f9;
+						}
+						.header a{
+							text-decoration: none;
+							color: #666666;
+						}
+						.header p span a{
+							color: red;
+						}
+						.header p span a:hover{
+							color: #0000FF;
+						}
+						.header a:hover{
+							color: #E4373B;
+						}
+						.header p{
+							display: inline-block;
+						}
+						.header ul li{
+							display: inline-block;
+							background: url(img/home_sprite.png)no-repeat;
+						}
+						.header ul{
+							display: inline-block;
+							float: right;
+							position: relative;
+						}
+						.header ul .line{
+							width: 1px;
+							height: 12px;
+							background: #E1E1E2;
+							margin: 0px 3px;
+						}
+						 .header ul .home-sprite-1{
+							 display: inline-block;
+							 width: 10px;
+							 height: 14px;
+							 padding-left: 20px;
+							 -background-position:-86px -53px;
+							 background: url(img/home_sprite.png)no-repeat -40px -86px;
+						 }
+						 .header ul .home-sprite-2{
+							 display: inline-block;
+							 height: 17px;
+							 padding-left: 13px;
+							 background: url(img/home_sprite.png)no-repeat -38px -69px;
+							 position: relative;
+							 bottom:-2px;
+							 left:-3px; 
+						 }
+						 .header ul li:nth-child(7):hover .home-sprite-2{
+							 background: url(img/home_sprite.png)no-repeat -51px -69px;
+						 }
+						 .header ul .home-sprite-3{
+							 padding-right: 15px;
+							 background-position:-14px -302px;;
+						 }
+		</style>
+	</head>
+	<body>
+		<header class="header">
+<!-- 			<div class="wrap"> -->
+				<div class="header-introduce wrap">
+					<p>欢迎光临当当，请<span><a href="#">登录</a></span>&nbsp;<a href="#">免费注册</a></p>
+					<ul>
+						<li><i class="home-sprite-1"></i><a href="#">购物车</a></li>
+						<li class="line"></li>
+						<li><a href="#">我的订单</a></li>
+						<li class="line"></li>
+						<li><a href="#">当当自出版</a></li>
+						<li class="line"></li>
+						<li><i class="home-sprite-2"></i><a href="#">手机当当</a></li>
+						<li class="line"></li>
+						<li class="home-sprite-3"><a href="#">我的当当</a></li>
+						<li class="line"></li>
+						<li class="home-sprite-3"><a href="#">企业采购</a></li>
+						<li class="line"></li>
+						<li class="home-sprite-3"><a href="#">客户服务</a></li>
+						<li class="line"></li>
+					</ul>
+				</div>
+				
+	</header>
+	
+				<div class="header-logo wrap">
+					<img src="img/logo.jpg" />
+				</div>
+
+		<nav class="nav">
+			<div class="wrap">
+				<ul>
+					<li><a href="#">全部商品分类</a></li>
+					<li><a href="#">尾品会</a></li>
+					<li><a href="#">图书</a></li>
+					<li><a href="#">电子书</a></li>
+					<li><a href="#">服装</a></li>
+					<li><a href="#">运动户外</a></li>
+					<li><a href="#">婴孕童</a></li>
+					<li><a href="#">家居</a></li>
+					<li><a href="#">当当优品</a></li>
+					<li><a href="#">电器城</a></li>
+					<li><a href="#">当当超市</a></li>
+					<li><a href="#">海外购</a></li>
+				</ul>
+			</div>
+		</nav>
+		<section class="main">
+			<div class="wrap">
+				
+				<aside class="main-left">
+					<h2>图书分类</h2>
+					<div>
+						<dl>
+							<dt><a href="#">电子书</a>&nbsp;<a href="#">豆瓜原创</a></dt>
+						</dl>
+						<dl><dt><a href="#">小说</a></dt></dl>
+						<dl>
+							<dt><a href="#">文艺</a></dt>
+							<dd>
+								<a href="#">文学</a> I <a href="#">传记</a> I <a href="#">艺术</a> I <a href="#">摄影</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="#">青春</a></dt>
+							<dd>
+								<a href="#">青春文学</a> I <a href="#">动漫</a> I <a href="#">幽默</a> I <a href="#">摄影</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="#">童书</a></dt>
+							<dd>
+								<a href="#">0-2</a> I <a href="#">3-6</a> I <a href="#">7-10</a> I <a href="#">11-14</a>
+								<a href="#">科普/百科</a> I <a href="#">图画书</a> I <a href="#">文字</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="#">励志/成功</a></dt>
+						</dl>
+						<dl>
+							<dt><a href="#">人文社科</a></dt>
+							<dd>
+								<a href="#">历史</a> I <a href="#">古籍</a> I <a href="#">哲学/宗教</a> I <a href="#">文化</a>
+								<a href="#">政治/军事</a> I <a href="#">法律</a> I <a href="#">社会科学</a> I <a href="#">心理学</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt><a href="#">英文原版书&nbsp;<a href="#">港台图书</a></dt>
+						</dl>
+						<dl>
+							<dt><a href="#">工具书</dt>
+						</dl>
+					</div>
+				</aside>
+				
+				     <aside class="mian-right">
+					<div class="mian-right-top">
+						<h3>最新动态</h3>
+						<p><a href="#">杨绛先生104岁生日快乐</a></p>
+						<p><a href="#">阅享频道:沈从文给家人的83封信</a></p>
+						<p><a href="#">小时代:我用十年青春，赴你最后之约</a></p>
+					</div>
+					<div class="mian-right-bottom">
+						<h3>最新预售<a href="#">预售更多</a></h3>
+ 					     <div class="box1"><a href="#"><img src="img/book.jpg" ></a></div>
+						<p><a href="#">极地重生沙克尔顿南极史诗之旅，探</a> </p>
+						<strong>
+							￥40.10<br />
+							<span>￥68.00</span>
+						</strong>
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<i class="btn"></i>
+						<i class="btn2"></i>
+					</div>
+				</aside>		
+				
+				<article class="content">
+					<div class="content-box1">
+						<img src="img/focus.jpg">
+						<ul>
+							<li>1</li>
+							<li>2</li>
+							<li>3</li>
+							<li>4</li>
+							<li>5</li>
+						</ul>
+					</div>
+					<div class="content-box2">
+						<h1><img src="img/new_book.png"></h1>
+						<div class="content-box2-1">
+							<a href="#">
+								<p><img src="img/book2.jpg"/> </p>
+								<strong>来得及</strong><br />
+								<dl>
+									<dt>何灵</dt>
+									<dd>￥40.00&nbsp;&nbsp;&nbsp;<span>￥43.00</span></dd>
+								</dl>
+								<div><img src="img/xsq.png"></div>
+							</a>
+						</div>
+						<div>
+							<a href="#">
+								<p><img src="img/book2.jpg"/> </p>
+								<strong>来得及</strong><br />
+								<dl>
+									<dt>何灵</dt>
+									<dd>￥40.00&nbsp;&nbsp;&nbsp;<span>￥43.00</span></dd>
+								</dl>
+							</a>
+						</div>
+						<div>
+							<a href="#">
+								<p><img src="img/book2.jpg"/> </p>
+								<strong>来得及</strong><br />
+								<dl>
+									<dt>何灵</dt>
+									<dd>￥40.00&nbsp;&nbsp;&nbsp;<span>￥43.00</span></dd>
+								</dl>
+							</a>
+						</div>
+						<div>
+							<a href="#">
+								<p><img src="img/book2.jpg"/> </p>
+								<strong>来得及</strong><br />
+								<dl>
+									<dt>何灵</dt>
+									<dd>￥40.00&nbsp;&nbsp;&nbsp;<span>￥43.00</span></dd>
+								</dl>
+							</a>
+						</div>
+						<div>
+							<a href="#">
+								<p><img src="img/book2.jpg"/> </p>
+								<strong>来得及</strong><br />
+								<dl>
+									<dt>何灵</dt>
+									<dd>￥40.00&nbsp;&nbsp;&nbsp;<span>￥43.00</span></dd>
+								</dl>
+							</a>
+						</div>
+						<div>
+							<a href="#">
+								<p><img src="img/book2.jpg"/> </p>
+								<strong>来得及</strong><br />
+								<dl>
+									<dt>何灵</dt>
+									<dd>￥40.00&nbsp;&nbsp;&nbsp;<span>￥43.00</span></dd>
+								</dl>
+							</a>
+						</div>
+						<div>
+							<a href="#">
+								<p><img src="img/book2.jpg"/> </p>
+								<strong>来得及</strong><br />
+								<dl>
+									<dt>何灵</dt>
+									<dd>￥40.00&nbsp;&nbsp;&nbsp;<span>￥43.00</span></dd>
+								</dl>
+							</a>
+						</div>
+						<div>
+							<a href="#">
+								<p><img src="img/book2.jpg"/> </p>
+								<strong>来得及</strong><br />
+								<dl>
+									<dt>何灵</dt>
+									<dd>￥40.00&nbsp;&nbsp;&nbsp;<span>￥43.00</span></dd>
+								</dl>
+							</a>
+					
+						</div>
+					</div>
+				</article>
+				
+				<aside class="aside3">
+					<h3>新书热卖榜</h3>
+					<div class="aside3-box">
+						<p><a href="">总榜</a><a href="">童书</a><a href="">励志</a><a href="">保健</a><a href="">美食</a></p>
+						<ul>
+							<li>
+								<a href="#">&nbsp;<span style="color: red;font-weight: bold;">1</span>&nbsp;奇幻梦境:一本漫游奇境的手绘
+								<div>
+									<img src="img/book.jpg">
+									极地重生沙克尔顿南极<br />
+									<strong style="color: red;">￥40.10</strong><br />
+									<strong style="color: #666666;text-decoration: line-through;">￥68.00</strong><br />
+									<span>333条评论</span>
+								</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">&nbsp;<span style="color: red;font-weight: bold;">2</span>&nbsp;奇幻梦境:一本漫游奇境的手绘
+								<div>
+									<img src="img/book.jpg">
+									极地重生沙克尔顿南极<br />
+									<strong style="color: red;">￥40.10</strong><br />
+									<strong style="color: #666666;text-decoration: line-through;">￥68.00</strong><br />
+									<span>333条评论</span>
+								</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">&nbsp;<span style="color: red;font-weight: bold;">3</span>&nbsp;奇幻梦境:一本漫游奇境的手绘
+								<div>
+									<img src="img/book.jpg">
+									极地重生沙克尔顿南极<br />
+									<strong style="color: red;">￥40.10</strong><br />
+									<strong style="color: #666666;text-decoration: line-through;">￥68.00</strong><br />
+									<span>333条评论</span>
+								</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">&nbsp;<span style="color: red;font-weight: bold;">4</span>&nbsp;奇幻梦境:一本漫游奇境的手绘
+								<div>
+									<img src="img/book.jpg">
+									极地重生沙克尔顿南极<br />
+									<strong style="color: red;">￥40.10</strong><br />
+									<strong style="color: #666666;text-decoration: line-through;">￥68.00</strong><br />
+									<span>333条评论</span>
+								</div>
+								</a>
+							</li>
+							<li>
+								<a href="#">&nbsp;<span style="color: red;font-weight: bold;">5</span>&nbsp;奇幻梦境:一本漫游奇境的手绘
+								<div>
+									<img src="img/book.jpg">
+									极地重生沙克尔顿南极<br />
+									<strong style="color: red;">￥40.10</strong><br />
+									<strong style="color: #666666;text-decoration: line-through;">￥68.00</strong><br />
+									<span>333条评论</span>
+								</div>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</aside>
+			</div>
+		</section>
+
+	</body>
+</html>

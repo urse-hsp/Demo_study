@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style type="text/css">
+		#grid{
+			width: 100px;
+			height: 100px;
+			border: 1px solid #666;
+			color: transparent;
+		}
+	</style>
+</head>
+<body>
+	<div id="grid"></div>
+    <script>
+        for(var i=0;i<10;i++){
+            setTimeout(()=>{
+				console.log((i))
+			},1000)
+        }
+		//var定义的是全局变量，let定义的是一个块级变量，在for循环中，let作用域只在for循环中有效 
+		// document.getElementById('grid').onclick(()=>{
+		// 	document.getElementById('grid').style.background="red"
+		// })
+		let grid = document.getElementById('grid');
+		let boole = true;
+
+			grid.onclick = ()=>{
+				boole = !boole;
+				if(boole){
+					grid.style.background = "transparent";
+				}else{
+					grid.style.background = "blue";
+				}
+			}
+			grid.onmouseover = ()=>{
+		
+					if(boole === true){
+						grid.style.background = "red"
+					}
+				
+			}
+			grid.onmouseout = ()=>{
+				if(boole === true){
+					grid.style.background = "transparent"
+				}
+			}
+			const { a: [ c, b ] } = { c: 5, b: 4, a: [ 3, 2 ] }
+			console.log({ a: [ c, b ] })
+			
+    </script>
+</body>
+</html>

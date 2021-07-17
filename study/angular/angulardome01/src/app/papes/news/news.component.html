@@ -1,0 +1,19 @@
+<p>news works!</p>
+
+<div #myBox>我是dom节点</div>
+<app-head
+  #header
+  [title]="title"
+  [runs]="runs"
+  [news]="this"
+  (outer)="runParent($event)"
+></app-head>
+<br />
+<br />
+<button (click)="getData()">请求数据</button>
+
+<p *ngFor="let item of list">
+  {{ item.name }}
+</p>
+
+<button (click)="getDataAxios()">axios请求</button>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="btn">读取</button>
+	<script>
+		//点击“读取”按钮时，就去找相应的文件
+		var btn=document.getElementById('btn');
+		btn.onclick=function(){
+			//1、创建ajax对象
+			//ajax对外的称呼，真正的其实是通过XMLHttpRequest，这样的一个对象完成的ajax请求
+			//只兼容非IE6的浏览器
+			//var oAjax=new XMLHttpRequest(); 
+			//alert(oAjax);
+			//var oAjax=new ActiveXObject("Microsoft.XMLHTTP");  //报错
+			//alert(oAjax);
+			//通过判断来解决这个问题
+			if (window.XMLHttpRequest){
+			    //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+			   var oAjax=new XMLHttpRequest();
+			}
+			else{
+			    // IE6, IE5 浏览器执行代码
+			   var oAjax=new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			//2、连接服务器 open(方法，文件名，同步异步)
+			//参数一：post/get：与POST相比，GET更简单也更快，并且在大部分情况下都能用
+			//区别：
+			//参数二：请求的文件
+			//参数三：同步异步（如何理解这两个词，造句理解一下）
+			//同步：让我们共同进步   吃饭、看电视同步进行  ——》理解为：多件事一起做
+			//异步：而异步正好和同步相反——》理解为：一件一件的来
+			//同步（false）：一件一件的来  异步（true）：多件事一起做(Ajax天生是做异步的)
+			oAjax.open("GET","abc.txt",true);
+			//3、发送请求
+			oAjax.send();
+			//4、接收返回值
+			//问题：ajax是跟网络打交道的，所以服务器发送过来的东西，时间是不一定的，有可能立马返回来了，也有可能是1分钟、5分钟等等，根据网速而定。那返回的值怎么办呢？实际上它是以一个事件存在的，当服务器的信息返回回来的时候，这个事件就会被调用
+			oAjax.onreadystatechange=function(){
+				//onreadystatechange意思是当与服务器发生交互时，会发生的事件
+				//那我怎么知道东西有没有发送过来呢？所以这也是有个状态的。
+				/*readyState：告诉我们浏览器和服务器进行到哪一步了
+				从 0 到 4 发生变化。
+				0: 请求未初始化（还没有调用到open方法）
+				1: 服务器连接已建立（已调用send方法，正在发生请求）
+				2: 请求已接收（send方法完成，已接收到全部响应内容）
+				3: 请求处理中（解析响应内容）
+				4: 请求已完成，且响应已就绪
+				status	
+					200: "OK"
+					404: 未找到页面*/
+				if (oAjax.readyState==4 && oAjax.status==200){
+					alert("请求成功"+oAjax.responseText);
+				}
+				else{
+					alert("请求失败"+oAjax.status);
+				}
+			}
+		}
+	</script>
+</body>
+</html>

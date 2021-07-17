@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <button id="btn">读取</button>
+    <p></p>
+<script>
+    var btn=document.getElementById("btn");
+    btn.onclick=function(){
+        //1、创建Ajax对象;
+//        var oAjax=new XMLHttpRequest();
+//        alert(oAjax);
+//          var oAjax=new ActiveXObject("Microsoft.XMLHTT");
+//        alert(oAjax);
+        if(XMLHttpRequest){
+            var oAjax=new XMLHttpRequest();
+        }else{
+            var oAjax=new ActiveXObject("Microsoft.XMLHTT");
+        }
+//        alert(oAjax);
+//        2.连接服务器  同步异步
+        //同步（false）：多件事一起做          电脑 一件一件做
+        //同步(true)：一件一件做         电脑 多件事一起做
+        oAjax.open("GET","abc.txt",true);
+//        3.发送请求
+        oAjax.send();
+        oAjax.onreadystatechange=function(){
+//            readyState:告诉我们浏览器和服务器进行到哪一步了
+//            从0-4
+            /*0：请求未初始化
+            1：服务器连接已建立
+            2：请求已接收
+            3：请求处理中
+            4：请求已完成，并且相应已就绪*/
+            /*status：
+            200："ok",404:"没有找到页面"*/
+            if(oAjax.readyState==4 && oAjax.status==200){
+//                alert(oAjax.responseText);
+                document.getElementsByTagName("p")[0].innerHTML=oAjax.responseText;
+            }else{
+//               alert(oAjax.status);
+            }
+        }
+    }
+</script>
+</body>
+</html>

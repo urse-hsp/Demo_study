@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				margin: 20px auto;
+				width:169px;
+				height:290px;
+				background: url(img/bg.jpg);
+			}
+			.ul-1{
+				padding: 0;
+				padding-left: 12px;
+				padding-top: 50px;
+				margin: 0;
+			}
+			.ul-1 li{
+				margin: 0px 1px;
+				display: inline-block;
+				width: 47px;
+				height: 23px;
+				line-height: 23px;
+				font-size: 14px;
+				border-radius: ;
+				background: url(img/menu2.gif)no-repeat;
+				text-align: center;
+			}
+			.ul-2{
+				padding: 0;
+			}
+			.ul-2 li{
+				list-style: none;
+				font-size: 14px;
+				margin: 5px 15px;
+				color: #0080D8;
+			}
+			.box2{
+				position: relative;
+			}
+			.box2 ul{
+				position: absolute;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">	
+		<ul class="ul-1">
+			<li onmouseover="back(1)"onmouseout="withdraw(1)"class="text">小说</li>
+			<li onmouseover="back(2)"onmouseout="withdraw(2)"class="text">非小说</li>
+			<li>少儿</li>
+		</ul>
+		<div class="box2">
+			<ul class="ul-2">
+				<li>1.时间旅行者的妻子</li>
+				<li>2.时间旅行者的妻子</li>
+				<li>3.时间旅行者的妻子</li>
+				<li>4.时间旅行者的妻子</li>
+				<li>5.时间旅行者的妻子</li>
+				<li>6.时间旅行者的妻子</li>
+				<li>7.时间旅行者的妻子</li>
+				<li>8.时间旅行者的妻子</li>
+			</ul>
+			<ul class="ul-2">
+				<li>1.时间旅行者</li>
+				<li>2.时间旅行者</li>
+				<li>3.时间旅行者</li>
+				<li>4.时间旅行者</li>
+				<li>5.时间旅行者</li>
+				<li>6.时间旅行者</li>
+				<li>7.时间旅行者</li>
+				<li>8.时间旅行者</li>
+			</ul>
+			<ul class="ul-2">
+				<li>1.时间</li>
+				<li>2.时间</li>
+				<li>3.时间</li>
+				<li>4.时间</li>
+				<li>5.时间</li>
+				<li>6.时间</li>
+				<li>7.时间</li>
+				<li>8.时间</li>
+			</ul>
+		</div>
+		</div>
+		<script type="text/javascript">
+			var UL = document.getElementsByTagName("ul");
+			var liList = UL[0].getElementsByTagName("li")
+			var contObj = document.getElementsByClassName("box2")[0];
+		
+			for(var i=0;i<liList.length;i++){
+				var Ul2 =document.getElementsByClassName("box2")[0].getElementsByTagName("ul");
+				liList[i].index = i;
+				liList[i].onmouseover=function(){
+					this.className+=" active";
+					Ul2[this.index].style.display="block";
+					liList[this.index].style.background="url(img/menu1.gif)";
+				}
+				liList[i].onmouseout=function(){
+					this.className=this.className.replace(" active","");
+					Ul2[this.index].style.display="none";
+					liList[this.index].style.background="url(img/menu2.gif)";
+				}
+			}
+		</script>
+	</body>
+</html>

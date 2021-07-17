@@ -1,0 +1,314 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.wrap{
+	width: 1200px;
+	margin: 0px auto;
+}
+.wrap1{
+	width: 1320px;
+	margin: 0px auto;
+}
+
+
+/* header 头部 */
+.hd-shortcut{
+	background:rgb(214,214,214);
+	line-height: 33px;
+	font-size: 12px;
+	background:linear-gradient(to bottom,rgb(214,214,214),white);
+	box-shadow: 0px 0px 0px 1px #F5F5F5;
+}
+.hd-shortcut a{
+	color: #666666;
+	text-decoration: none;
+}
+.hd-shortcut a:hover{
+	color: #E4373B;
+}
+.hd-city{
+	display: inline-block;
+}
+.hd-shortcut-nav{
+	display: inline-block;
+	float: right;
+}
+.hd-shortcut-nav .line{
+	width:1px;
+	height: 12px;
+	background: #666666;
+}
+.hd-shortcut ul li{
+	display: inline-block;
+	margin: 0 4px;
+	position: relative;
+}
+.hd-shortcut ul li #color{
+	color: red;
+}
+.hd-shortcut ul li #color:hover{
+	text-decoration:underline;
+}
+.hd-shortcut-nav .sprite-sheet{
+	padding-right: 15px;
+	background: url(../img/t_arrow.gif)no-repeat right;
+}
+.hd-shortcut-nav .follow{
+	padding-right: 16px;
+	background: url(../img/sh1.png)no-repeat right;
+	margin-right: 8px;
+}
+.hd-shortcut-nav i{
+	display: inline-block;
+	width: 18px;
+	height: 15px;
+	background: url(../img/sh2.png)no-repeat;
+	position: relative;
+	bottom: -5px;
+}
+.hd-shortcut-nav .cellphone{
+	padding-right: 18px;
+	background: url(../img/s_tel.png)no-repeat right;
+}
+
+.hd-header-logo{
+	width:210px;
+	height: 72px;
+	display: inline-block;
+	margin: 40px 0;
+	float: left;
+}
+.hd-searchbox{
+	display: inline-block;
+	width: 519px;
+	height: 42px;
+	border: 2px solid red;
+	margin-top: 60px;
+	margin-left: 80px;
+	float: left;
+}
+.hd-searchbox input{
+	width: 420px;
+	height: 38px;
+	vertical-align:middle;
+	border: none;
+	outline:none;
+}
+.hd-searchbox button{
+	width: 95px;
+	height: 38px;
+	vertical-align:middle;
+	border: none;
+	background: red;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	outline:none;
+}
+.hd-shoppingtrolley{
+	width:120px;
+	height: 42px;
+	border: 1px #E1E1E2 solid;
+	display: inline-block;
+	margin: 60px 0px 0px 200px;
+	font-size: 15px;
+	line-height: 42px;
+	padding-left: 10px;
+	
+}
+.hd-shoppingtrolley p a{
+	color:#666666;
+	text-decoration: none;
+	padding-left: 38px;
+	background: url(../img/car.png)no-repeat left;
+}
+.hd-header-shortcut{
+	display: inline-block;
+	margin-left: 80px;
+	margin-bottom: 30px;
+}
+.hd-header-shortcut ul li{
+	display: inline-block;
+}
+.hd-header-shortcut ul li a{
+	color: #666666;
+	font-size: 12px;
+	text-decoration: none;
+	margin: 0px 3px;
+}
+.hd-header-shortcut ul li a:hover{
+	color: #E4373B;
+}
+
+.hd-nav1{
+	line-height: 40px;
+}
+.hd-nav ul li{
+	display: inline-block;
+	margin-right: 20px;
+	vertical-align: middle;
+}
+.hd-nav ul li a{
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+.hd-nav #color{
+	color: red;
+}
+.hd-nav-classify{
+	width: 220px;
+	background: red;
+}
+.hd-nav-classify p{
+	padding-left: 35px;
+	color: white;
+	font-weight: bold;
+}
+.nav-subnav-box{
+	position: absolute;
+	width: 220px;
+	background: rgb(176,29,29);
+}
+
+#nav-subnav-box li a{
+	color: #FFFFFF;
+	font-weight: 100;
+}
+#nav-subnav-box li{
+	margin: 0px;
+}
+.nav-subnav-box a{
+	font-size: 14px;
+}
+#nav-subnav-box a:hover{
+	color: #000000;
+}
+.nav-subnav-box i{
+	display: inline-block;
+	height: 30px;
+	width: 30px;
+}
+.nav-subnav-box i,li{
+	vertical-align: middle;
+	background: url(../img/nav.png);
+	background: no-repeat;
+}
+.nav-subnav-box li{
+	width: 100%;
+	background: url(../img/indexhead_sprite.png)no-repeat 200px -1148px;
+}
+.nav-subnav-box li .map1{background: url(../img/nav.png)no-repeat 8px 4px;}
+.nav-subnav-box li .map2{background: url(../img/nav.png)no-repeat 8px -43px;}
+.nav-subnav-box li .map3{background: url(../img/nav.png)no-repeat 7px -86px;}
+.nav-subnav-box li .map4{background: url(../img/nav.png)no-repeat 8px -130px;}
+.nav-subnav-box li .map5{background: url(../img/nav.png)no-repeat 8px -168px;}
+.nav-subnav-box li .map6{background: url(../img/nav.png)no-repeat 7px -209px}
+.nav-subnav-box li .map7{background: url(../img/nav.png)no-repeat 7px -246px;}
+.nav-subnav-box li .map8{background: url(../img/nav.png)no-repeat 7px -288px;}
+.nav-subnav-box li .map9{background: url(../img/nav.png)no-repeat 7px -326px;}
+.nav-subnav-box li .map12{background: url(../img/nav.png)no-repeat 7px -440px;}
+.hd-nav1 span{
+	display: inline-block;
+	width: 115px;
+	height: 30px;
+	vertical-align: middle;
+	float: right;
+}
+
+/* section,内容部分 */
+.main{
+	border-top: 2px red solid;
+}
+.main-banner{
+	width:728px;
+	height: 422px;
+	float: left;
+	margin-left: 230px;
+	position: relative;
+}
+#carousel{
+	width:728px;
+	height: 420px;
+}
+.main-banner li{
+	display: inline-block;
+	list-style: none;
+	width:20px;
+	height:20px;
+	text-align:center;
+	line-height: 20px;
+	background:rgb(204,192,179);
+	border-radius: 50%;
+	margin: 0px 3px;
+	cursor: pointer;
+}
+.main-banner ul{
+	position: absolute;
+	right: 300px;
+	bottom: 25px;
+}
+.main-right{
+	height: 420px;
+	border: 1px solid #E1E1E2;
+	width: 220px;
+	float: right;
+}
+img[src="img/b_left.png"]{
+	position: absolute;
+	left: 0px;
+	top: 180px;
+	cursor: pointer;
+}
+img[src="img/b_right.png"]{
+	position: absolute;
+	right: 0px;
+	top: 180px;
+	cursor: pointer;
+}
+.main-right div:nth-child(1) h3{
+	height: 42px;
+	line-height: 42px;
+	text-indent: 15px;
+	border-bottom: 1px  dotted  #E1E1E2 ;
+}
+.main-right div:nth-child(2) h3{
+	font-size: 17px ;
+	height: 42px;
+	line-height: 42px;
+	text-indent: 15px;
+	border-bottom: 1px  dotted  #E1E1E2 ;
+}
+.main-right div:nth-child(1) h3 span a{
+	font-size: 12px;
+	color: #666666;
+	float: right;
+	text-decoration: none;
+	margin-right: 10px;
+}.main-right div:nth-child(1) h3 span a:hover{
+	color: #E4373B;
+	text-decoration: underline;
+}
+.main-right div:nth-child(1) ul{
+	padding: 10px 0px 20px 5px;
+	border-bottom: 1px solid #E1E1E2;
+}
+.main-right div:nth-child(1) li{
+	list-style: none;
+	font-size: 14px;
+	color: #666666;
+	margin: 10px 0px;
+}
+.main-right div:nth-child(1) li strong{
+	color: #000000;
+}
+.main-right div:nth-child(2) p{
+	font-size: 13px;
+	padding: 5px 0px 5px 10px;
+}
+.main-right div:nth-child(2) img{
+	width: 200px;
+	margin: 0px 0px 0px 10px;
+}

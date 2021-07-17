@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet/less" href="css/register.less" type="text/css">
+    <link rel="stylesheet" href="css/font_4nwghu9wqbe/iconfont.css"/>
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+</head>
+<body>
+<header>
+    <div class="header_top">
+        <p>中国移动 3G</p>
+        <div class="right-top">
+            <span class="iconfont icon-clock"></span>
+            <span class="iconfont 3G-Network icon-G-Network"></span>
+            <span class="iconfont icon-dianliang"></span>
+            <span>16:25</span>
+        </div>
+    </div>
+    <div class="nav">
+        <div class="item_nav" id="back"></div>
+        <div class="item_nav">注册</div>
+        <div class="item_nav"></div>
+    </div>
+</header>
+<article>
+    <div class="form">
+        <form method="post" action="login.html">
+            <div><label>国家/地区</label><input type="text" placeholder="手机号码/用户名/邮箱" required id="uName" value="中国大陆 86"/></div>
+            <div><label>手机号</label> <input type="tel" placeholder="常用手机号" required id="tel" pattern="^[1][0-9]{10}" maxlength="20" name="tel"/><span class="icon-form-top"></span></div>
+            <div><label>验证码</label> <input type="text" placeholder="短信验证码" required id="checkCode" maxlength="20" name="checkCode" pattern="[A-Za-z0-9]{6,12}"/><a class="checkCode">获取验证码</a></div>
+            <div><label>设置密码</label> <input type="password" placeholder="6~12位大小写字母、数字" required id="pwd" pattern="[A-Za-z0-9]{6,12}" maxlength="20" name="pwd"/><span class="icon-form-pwd"></span><span class="icon-form-password"></span></div>
+            <div class="button-form"><button>注册</button></div>
+        </form>
+    </div>
+</article>
+<script src="js/less.js"></script>
+<script src="js/flexible.js"></script>
+<script src="js/zepto.js"></script>
+<script src="js/touch.js"></script>
+<script type="text/javascript">
+
+    Zepto(function (){
+
+        var form=document.querySelector("form");
+
+        //给form添加无效运行时的事件
+        form.addEventListener("invalid",function (e){
+
+            var item= e.target;     //获取当前无效的标签
+            //获取 validityState 对象
+            var validityState= item.validity;
+
+            var name=item.name;    //根据name属性查找要验证的元素
+
+            switch (name){
+                case "checkCode":
+                    if(validityState.valueMissing){
+                        item.setCustomValidity("验证码不能为空");
+                    }else{
+                        if(validityState.patternMismatch){
+                            item.setCustomValidity("验证码为字母或数字，并且长度在6~10之间");
+                        }
+                    }
+                    break;
+                case "pwd":
+                    if(validityState.valueMissing){
+                        item.setCustomValidity("密码不能为空");
+                    }else{
+                        if(validityState.patternMismatch){
+                            item.setCustomValidity("密码为6~12位大小写字母、数字");
+                        }
+                    }
+                    break;
+                case "tel":
+                    if(validityState.valueMissing){
+                        item.setCustomValidity("手机号不能为空");
+                    }else{
+                        if(validityState.patternMismatch){
+                            item.setCustomValidity("手机号为以1开头的11位数字");
+                        }
+                    }
+                    break;
+            }
+
+
+        },true);
+
+
+        //注册
+        var str=["a","b","c","d",1,2,3,4,"A","B","C","D"];
+
+        //用户名
+        var uName="";
+        for(var i=0;i<6;i++){
+            //随机数
+            var index=parseInt(Math.random()*12);
+            uName+=str[index];
+        }
+
+        //提交
+        form.onsubmit=function (){
+            //密码
+            var $password=$("#pwd").val();
+
+            localStorage.setItem("userName", uName);
+            localStorage.setItem("password", $password);
+            alert("恭喜你注册成功!\n请牢记你的昵称:"+uName);
+        };
+
+
+        //输入时候取消验证
+        form.addEventListener("input",function(e){
+
+            var item= e.target;
+
+            item.setCustomValidity("");  //清除验证信息
+
+        },true);
+
+
+
+
+        $(".icon-form-top").tap(function (){
+
+            $("#tel").val(""); //清空
+
+        });
+
+        $(".icon-form-pwd").tap(function (){
+
+            $("#pwd").val(""); //清空
+
+        });
+
+        var $pwd=$("#pwd"); //获取元素
+        $(".icon-form-password").tap(function (){
+            if($pwd.attr("type")=="password"){
+                $pwd.attr("type","text");
+            }else if($("#pwd").attr("type")=="text"){
+                $pwd.attr("type","password");
+            }
+        });
+
+        //后退
+        $("#back").tap(function (){
+            history.back();
+            self.location=document.referrer;
+        });
+
+
+        //验证码
+
+        var isFlag=true;  //是否可以点击
+
+        if(isFlag){
+            $(".checkCode")[0].addEventListener("tap",function (){
+               isFlag=false;
+                var countdown = 60;
+
+                function setTime() {
+
+                    countdown--;
+
+                    if(countdown<10){
+                        countdown="0"+countdown;
+                    }
+
+                    $(".checkCode").html(countdown + "s");
+
+                    if (countdown == 0) {
+                        $(".checkCode").html("重新发送");
+                        countdown = 60;
+                        isFlag=true;
+                        return;
+                    }
+
+
+                    setTimeout(function () {
+                        setTime()
+                    }, 1000);
+                }
+
+                setTime();
+
+            },false);
+        }
+
+    })
+
+
+
+</script>
+</body>
+</html>

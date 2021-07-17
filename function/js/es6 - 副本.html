@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<p><input type="text" id="budget" placeholder=" 输入预算上限(完整数字)"/></p>
+	<p><input type="text" id="total"/></p>
+	<button id="btn">结算</button>
+	<p id="result"></p>
+	
+    <script>
+		document.getElementById("btn").onclick = ()=>{
+			let budget = document.getElementById("budget").value;
+			let total = document.getElementById("total").value.trimEnd().trimStart().replace(/\s/g,".").split(".");
+			let resultDOM = document.getElementById("result");
+			let totalPrices = 0;
+			
+			if(budget==""||total==""){
+				return alert("请输入信息")
+			}
+			
+			for(value of total){
+						console.log(total)
+				totalPrices += parseInt(value);
+			}
+			
+			let result = budget - parseInt(totalPrices);
+			
+			if(result<0){
+				resultDOM.innerHTML = `超出预算：${Math.abs(result)}`
+			}else{
+				resultDOM.innerHTML = `没有超出，预算资金剩余：${result}`
+			}
+		}
+    </script>
+</body>
+</html>

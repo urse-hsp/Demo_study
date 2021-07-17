@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 500px;
+				height: 2000px;
+				background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		<script type="text/javascript">
+			
+			//开关函数 闸门
+			// function Throttle(fn,Time){
+			//     let Boole = true;
+			//     return function() {
+			//        if(!Boole){
+			//            return false ;
+			//        }
+			//         Boole = false;
+			//         setTimeout(() => {
+			//             fn()
+			//             Boole = true;
+			//         }, Time)
+			//     }
+			// }
+			
+			// //上下滑动
+			// function showTop  () {
+			//     var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+			// 　　console.log('滚动条位置：' + scrollTop);
+			// }
+			// window.onscroll = Throttle(showTop,1000);
+			
+			function Debounce(fn,Time){
+			    let timer = null;
+			    return function() {
+			        if(timer){
+			            clearTimeout(timer) 
+			        }
+			        timer = setTimeout(fn,Time)
+			    }
+			}
+			function showTop  () {
+			    var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+			　　console.log('滚动条位置：' + scrollTop);
+			}
+			window.onscroll = Debounce(showTop,1000);
+			
+		</script>
+	</body>
+</html>

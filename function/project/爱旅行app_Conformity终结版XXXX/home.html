@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>123</title>
+    <link rel="stylesheet/less" href="css/home.less" type="text/css">
+    <link rel="stylesheet" href="css/reset.css" type="text/css">
+    <link rel="stylesheet" href="css/font_4nwghu9wqbe/iconfont.css"/>
+    <link rel="stylesheet" href="css/font_id3zx6j3fdn/iconfont.css"/>
+</head>
+<body>
+<header>
+    <div class="header_top">
+        <p>中国移动 3G</p>
+        <div class="right-top">
+            <span class="iconfont icon-clock"></span>
+            <span class="iconfont 3G-Network icon-G-Network"></span>
+            <span class="iconfont icon-dianliang"></span>
+            <span>16:25</span>
+        </div>
+    </div>
+    <div class="nav">
+       <div class="item_nav" id="back"></div>
+        <div class="item_nav">个人</div>
+        <div class="item_nav"><a href="login.html">登录</a></div>
+    </div>
+</header>
+<article>
+    <div class="article_top">
+        <div class="box">
+            <div class="icon-person">
+                <div></div>
+            </div>
+        </div>
+        <div class="icon-mock">
+            <div></div>
+        </div>
+        <div class="info_article">
+            <h2>您好 游客</h2>
+            <h4>世界很大，抬脚出去荡~</h4>
+        </div>
+        <div class="money_article">
+            <p><span class="small">¥</span><span class="big">50</span></p>
+            <p>红包优惠券</p>
+        </div>
+        <div class="point_article">
+            <p><span class="big">1000</span><span class="small">分</span></p>
+            <p>积分</p>
+        </div>
+    </div>
+    <div class="menu_article">
+        <a href="javascript:void (0)"><span class="menu-icon"></span><span class="menu-name">全部订单</span></a>
+        <a href="javascript:void (0)"><span class="menu-icon"></span><span class="menu-name">待付款</span></a>
+        <a href="javascript:void (0)"><span class="menu-icon"></span><span class="menu-name">未出行</span></a>
+        <a href="javascript:void (0)"><span class="menu-icon"></span><span class="menu-name">带点评</span></a>
+    </div>
+    <div class="article_bottom">
+           <ul>
+              <li><a href="javascript:void (0)"><span class="menu-icon"></span><span class="menu-name">我的相册</span></a><span class="iconfont icon-dayuhao"></span></li>
+              <li><a href="javascript:void (0)"><span class="menu-icon"></span><span class="menu-name" >我的行程</span></a><span class="iconfont icon-dayuhao"></span></li>
+              <li><a href="javascript:void (0)"><span class="menu-icon"></span><span class="menu-name">我的游记</span></a><span class="iconfont icon-dayuhao"></span></li>
+              <li><a href="javascript:void (0)"><span class="menu-icon"></span><span class="menu-name">我的财富</span></a><span class="iconfont icon-dayuhao"></span></li>
+          </ul>
+    </div>
+</article>
+<footer>
+    <div class="footer">
+        <a href="index.html"><span class="menu-icon"></span><span class="menu-name">首页</span></a>
+        <a href="travel2.html"><span class="menu-icon"></span><span class="menu-name">目的地</span></a>
+        <a href="BrowsingHistory.html"><span class="menu-icon"></span><span class="menu-name">浏览历史</span></a>
+        <a href="home.html"><span class="menu-icon"></span><span class="menu-name">个人</span></a>
+    </div>
+</footer>
+
+<script src="js/less.min.js"></script>
+<script src="js/flexible.js"></script>
+<script src="js/zepto.js"></script>
+<script src="js/touch.js"></script>
+<script  type="text/javascript">
+
+    Zepto (function(){
+        //后退
+        $("#back").tap(function (){
+
+            history.back();
+//            self.location=document.referrer;
+        });
+    })
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+
+  </div>
+  <script src="./Ajax.js"></script>
+  <script>
+    let getProd = new Promise((resolve, reject) => {
+      ajax("GET", "https://www.fastmock.site/mock/bf8472e01c568d7c136e7ba95a7dd945/shop1/ap2", true, function (res) {
+        console.log(res)
+        if (res.code == 200) {
+          resolve(res.data)
+        } else {
+          reject()
+        }
+      })
+    });
+    let getCust = new Promise((resolve, reject) => {
+      ajax("GET", "https://www.fastmock.site/mock/bf8472e01c568d7c136e7ba95a7dd945/shop1/ap", true, function (res) {
+        console.log(res)
+        if (res.code == 200) {
+          resolve(res.data)
+        } else {
+          reject()
+        }
+      })
+    });
+    Promise.all([getProd, getCust]).then((res) => {
+      console.log(res)
+      let {a = res[0], a2 = res[1]} = res;
+
+      console.log(a, a2)
+      console.log("成功")
+      // this.bindCust(cust);
+      // 要把回调写在这里面
+
+    }).catch(err => {
+      console.log("获取信息失败")
+      // this.msg('获取信息失败', 'error');
+    });
+
+    // axios://blog.csdn.net/webfullstack/article/details/85123321
+    // Promisn :https://blog.csdn.net/webfullstack/article/details/85123321
+  </script>
+</body>
+
+</html>

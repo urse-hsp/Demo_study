@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="search" name="" id="search" value="" />
+		<ul id="contents"></ul>
+		<script src=".js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("#search").keyup(function(){
+				var searchValue = $("#search").val();
+				if(!searchValue){
+					return false;
+				}									//1.创造keyup 事件的功能：把this目标var个变量，判断为空this，jsonp设置跨域，设置延迟器。2.定义调用函数功能:移除定时器,导到网页上
+				delay=setTimeout(function(){
+					$("#jsonp").remove();
+					var oscript = document.createElement("script");
+						oscript.src="https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd="+searchValue+"&cb=showData";
+						oscript.id = "jsonp";
+					$("body").append(oscript);
+				},400);
+			});
+			function showData(res){
+				clearTimeout(delay);
+				var $tempStr = "";
+				$.each(res.s,function(index,element){
+					$tempStr+="<li>"+element+"</li>";
+				});
+				$("ul").html($tempStr);
+			};
+		</script>
+	</body>
+</html>

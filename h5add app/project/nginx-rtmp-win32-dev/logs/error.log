@@ -1,0 +1,2 @@
+2020/05/23 19:10:01 [emerg] 11872#2336: CreateFile() "D:\My project\我的复习攻略\H5与小程序直播\project\nginx-rtmp-win32-dev/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)
+2020/05/23 19:13:44 [emerg] 2856#17220: CreateFile() "D:\My project\我的复习攻略\H5与小程序直播\project\nginx-rtmp-win32-dev/conf/nginx.conf" failed (1113: No mapping for the Unicode character exists in the target multi-byte code page)

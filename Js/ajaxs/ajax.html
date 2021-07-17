@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			if(window.XMLHttpRequest){
+				var oAjax = new XMLHttpRequest();
+			}else{
+				var oAjax = new ActiveXObject("Microsoft.XMLHTTP")
+			} 
+			oAjax.open("GET","text/text.txt",true);
+			oAjax.send();
+			oAjax.onreadystatechange = function(){
+				if(oAjax.readyState==4&&oAjax.status==200){
+					document.write(oAjax.responseText);
+				}
+			}
+		</script>
+	</body>
+</html>

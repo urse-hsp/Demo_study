@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 730px;
+				height: 454px;
+				position: relative;
+			}
+			#box ul li{
+				list-style: none;
+				display: inline-block;
+				width: 25px;
+				height: 25px;
+				line-height: 25px;
+				text-align: center;
+				background:pink;
+				color: white;
+				margin: 0 5px;
+			}
+			#box ul{
+				position: absolute;
+				right: 50px;
+				bottom: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<img src="img/1.jpg" >
+			<ul>
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+		</div>
+		<script type="text/javascript">
+			var click = document.getElementsByTagName("li");
+			var imgList = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"]
+			var num = 0;
+			function slideshow(){
+				for(var j=0;j<imgList.length;j++){
+					if(num==j){
+						click[j].style.background="red";
+					}else{
+						click[j].style.background="pink";
+					}
+				}				
+				document.getElementsByTagName("img")[0].src=imgList[num]
+				num++;
+				if(num==imgList.length)num=0;
+			}
+			
+			auto = setInterval(slideshow,1000);
+
+			// 鼠标悬浮图片后 暂停循环
+			document.getElementsByTagName("img")[0].onmouseover=function(){
+				clearInterval(auto);
+			}
+			document.getElementsByTagName("img")[0].onmouseout=function(){
+				auto=setInterval(slideshow,1000);
+			}
+			
+			for(var i=0;i<click.length;i++){
+				click[i].index = i;
+				click[i].onmouseover=function(){
+					clearInterval(auto);
+					for(var j=0;j<click.length;j++){
+						if(this.index==j){
+							click[j].style.background="red";
+						}else{
+							click[j].style.background="pink";
+						}
+					}
+					document.getElementsByTagName("img")[0].src = imgList[this.index];
+					console.log(this.index);
+					num = this.index;
+				};
+				click[i].onmouseout = function(){
+					// num++;
+					// slideshow();
+				auto = setInterval(slideshow,1000);
+				}
+			}
+		</script>
+	</body>
+</html>

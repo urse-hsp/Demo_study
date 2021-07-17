@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        ul{
+            list-style: none;
+            position: relative;
+            top: -50px;
+            left: 500px;
+        }
+        li{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: pink;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <img src="img/1.jpg">
+    <ul>
+        <li index="0" id="li1" onclick="" style="background-color: red">1</li>
+        <li index="1" id="li2">2</li>
+        <li index="2" id="li3">3</li>
+        <li index="3" id="li4">4</li>
+    </ul>
+</div>
+    <script>
+    	var liList = document.getElementsByTagName("li");//获取所有的游标色块
+    	var imgList = ["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"];//将四张图片存入数组中
+    	var nowIndex = 0;
+    	
+    	for(var i=0;i<liList.length;i++){
+    		liList[i].index = i;//将当前li元素的下标作为index属性存在该li元素中
+    		//鼠标移到li上，清除自动轮播定时器
+    		liList[i].onmouseover = function(){//给当前li元素绑定一个onclick鼠标单击事件
+    			clearInterval(auto);
+    			for(var j=0;j<liList.length;j++){//将所有li元素读取出来，根据存在该li元素中的index属性判断当前读取的li元素是否就是被点击的那个
+    				if(this.index==j){//这里的this代表38行liList[i]，如果是被点击的那个
+    					liList[j].style.background = "red";//背景色变为红色
+    				}else{//如果不是被点击的那个
+    					liList[j].style.background = "pink";//背景色变为粉色
+    				}
+    			}
+    			document.getElementsByTagName("img")[0].src = imgList[this.index];
+    			nowIndex = this.index;
+    		};
+    		
+    		//鼠标从li上移开自动轮播
+    		liList[i].onmouseout = function(){
+//  			nowIndex++;
+//  			changeImg();
+    			auto = setInterval(changeImg,1500);//每隔一段时间调用一次函数
+    		}
+    	}
+    	
+    	//鼠标移动到图片上不会自动轮播
+    	document.getElementsByTagName("img")[0].onmousemove = function(){
+    		clearInterval(auto);
+    	}
+    	document.getElementsByTagName("img")[0].onmouseout = function(){
+    		auto = setInterval(changeImg,1500);//每隔一段时间调用一次函数
+    	}
+    	
+    	function changeImg(){
+			for(var j=0;j<liList.length;j++){
+				if(nowIndex==j){
+					liList[j].style.background = "red";//背景色变为红色
+				}else{
+					liList[j].style.background = "pink";//背景色变为粉色
+				}
+			}
+			document.getElementsByTagName("img")[0].src = imgList[nowIndex];
+			nowIndex++;
+			if(nowIndex==imgList.length){
+				nowIndex=0;
+			}
+    	}
+    	auto = setInterval(changeImg,1500);//每隔一段时间调用一次函数
+    	
+//  	setTimeout(函数,时间);//延迟一段时间调用函数
+    	
+    </script>
+</body>
+</html>

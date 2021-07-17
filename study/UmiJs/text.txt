@@ -1,0 +1,11 @@
+src下：layouts 全局路由
+
+约定式路由：
+my/[id].js 当前文件需要要船值   my/:id
+my/index.js 路由名  my
+my/my.js   路由名  my/my
+
+嵌套路由
+约定目录下有 _layout.tsx 时会生成嵌套路由，
+以 _layout.tsx 为该目录的 layout。当前目录所有都在此layout下面
+layout 文件需要返回一个 React 组件，并通过 props.children 渲染子组件。

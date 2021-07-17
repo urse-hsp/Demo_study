@@ -1,0 +1,142 @@
+.container {
+  width: 600px;
+}
+
+/* train页面 直播培训 */
+.trainWrap {
+  margin: auto;
+  padding: 80px 0 30px;
+  display: flex;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+
+.trainWrap h3 {
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.trainWrap li p {
+  line-height: 30px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.trainWrap li p:last-child {
+  text-indent: 2em;
+}
+
+
+/* agent  授权页面 */
+.agentWrap {
+  margin: auto;
+  padding: 80px 0 30px;
+  display: flex;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+
+.agentWrap h3 {
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.agentWrap li p {
+  line-height: 30px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.agentWrap li:nth-child(n + 2) p:first-child {
+  font-weight: bold;
+}
+
+.agentWrap li:first-child p,
+.agentWrap li p:nth-child(n + 2) {
+  text-indent: 2em;
+}
+
+
+/* help 直播相关内容 */
+.helpWrap {
+  margin: auto;
+  padding: 80px 0 30px;
+  display: flex;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+
+.helpWrap h3 {
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.helpWrap li p {
+  line-height: 30px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.helpWrap li p:last-child {
+  text-indent: 2em;
+}
+
+.helpWrap div:first-child>p {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.helpWrap div:last-child h3 {
+  margin-top: 30px;
+}
+
+
+/* download APP下载页 */
+
+.downloadWrap {
+  margin: auto;
+  padding: 80px 0 30px;
+  display: flex;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+
+.downloadWrap h3 {
+  font-size: 30px;
+  line-height: 30px;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.downloadWrap ul {
+  width: 100%;
+}
+
+.downloadWrap li:first-child {
+  transform: translateX(-25px);
+}
+
+.downloadWrap li:first-child img {
+  margin-left: 40px;
+}
+
+.downloadWrap ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.downloadWrap li a {
+  color: #000 !important;
+}

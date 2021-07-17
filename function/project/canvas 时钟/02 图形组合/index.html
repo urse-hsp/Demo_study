@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>图形组合</title>
+  <style>
+	*{padding:0;margin:0;}
+	.container{width:600px;margin:20px auto;}
+  </style>
+ </head>
+ <body>
+  <div class="container">
+	<canvas id="canvas" height="600" width="600"></canvas>
+  </div>
+ </body>
+ <script>
+	//获得画布 对象
+	var canvas = document.getElementById("canvas");
+	var context = canvas.getContext("2d");
+
+	
+	
+	context.fillStyle = "blue";
+	context.fillRect(10,10,60,60);
+	
+	/**source-over*
+	context.globalCompositeOperation = "source-over"; */
+	
+
+	/**destination-over*
+	context.globalCompositeOperation = "destination-over"; */
+	
+
+	/**source-in*
+	context.globalCompositeOperation = "source-in";*/
+	
+
+	/**destination-in*
+	context.globalCompositeOperation = "destination-in";*/
+	
+
+	/**source-out*
+	context.globalCompositeOperation = "source-out";*/
+	
+
+	/**destination-out*
+	context.globalCompositeOperation = "destination-out";*/
+
+	/**source-atop*
+	context.globalCompositeOperation = "source-atop";*/
+	
+
+	/**destination-atop*
+	context.globalCompositeOperation = "destination-atop";
+	*/
+
+	/**lighter*
+	context.globalCompositeOperation = "lighter";
+	*/
+
+	/**xor*
+	context.globalCompositeOperation = "xor";
+	*/
+
+	/**copy**/
+	context.globalCompositeOperation = "copy";
+	
+	context.beginPath();
+	context.fillStyle = "red";
+	context.arc(60,60,30,0,Math.PI*2);
+	context.fill();
+	
+	
+ </script>
+</html>

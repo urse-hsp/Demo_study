@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			let aa = "https://mail.163.com/js6/main.jsp?sid=VDsBnmblfhZcmJYqOUllbfSWwgpCcnFU&df=mail163_letter#module=mbox.ListModule%7C%7B%22fid%22%3A1%2C%22order%22%3A%22date%22%2C%22desc%22%3Atrue%7D,https://www.baidu.com.1.1.1.2/,https://www.amazon.co.uk/Wireless-iClever-Bluetooth-Backlight-Smartphone/dp/B018K5EJCQ/ref=sr_1_28?s=computers&ie=UTF8&qid=1496913940&sr=1-28&keywords=Bluetooth+Keyboard,https://www.amazon.co.uk/Wireless-iClever-Bluetooth-Backlight-Smartphone/dp/B018K5EJCQ/ref=sr_1_28?s=computers&ie=UTF8&qid=1496913940&sr=1-28&keywords=Bluetooth+Keyboard";
+
+			var reg = /(http:\/\/|https:\/\/)((\w|=|\?|\.|\/|&|-)+)/g;
+			let reg2 = /(http:|https:)\/\/(www.)?(\w+(\.)?)+/g
+			let msg = aa.match(reg2);
+			console.log(msg)
+			console.log(undefined==null)
+			
+			window.n = "window name";
+			let obj = {
+				n:'boj name',
+				sayN(){
+					console.log(this.n)
+				}
+			}
+			let fn = obj.sayN;
+			fn()
+			
+			console.log([1]==[1],[1]===[1],null==undefined);
+			
+			let url ="www.czc-superzig.com?a=1&b=2&b=3";
+			let arr = url.split("?")[1].split("&")
+			let Obj = {}
+			for (value of arr){
+				Obj[value.split("=")[0]] = value.split("=")[1]
+			}
+			console.log(Obj)
+			console.log(window.location)
+			
+			// (async function(){
+			// 	console.log(1)
+			// 	let calc = new Calculator().input(10)
+			// 	let v1 = await calc.div(2)
+			// 	let v2 = await calc.div(0)
+			// }())
+			
+			
+			//实现一个函数，获取当前页面url,将location.search中的键值对按键的首字母顺序重新排列，返回新的url(不考虑特殊字符，键值对均为key=value的形式)
+			let url2 ="www.czc-superzig.com?a=1&c=2&b=3";
+			let arr2 = url2.split("?")[1].split("&").sort();//排序a-z的方式（sort）
+			let aaa = url2.split("?")[0]+'?'+arr2.toString().replace(/\,/g,"&")
+			console.log(aaa)
+			
+		</script>
+	</body>
+</html>

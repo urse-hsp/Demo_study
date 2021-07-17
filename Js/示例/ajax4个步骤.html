@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//1创建ajax对象
+			if(window.XMLHttpRequest){
+				var oAjax = new XMLHttpRequest();
+			}else{
+				var oAjax = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			//2连接服务器
+			oAjax.open("get","data/test.txt",true);
+			//3向服务器发送请求
+			oAjax.send();
+			//4接收服务器返回数据
+			oAjax.onreadystatechange = function(){
+				if(oAjax.readyState==4&&oAjax.status==200){
+					document.write(oAjax.responseText);
+				}
+			}
+			
+		</script>
+	</body>
+</html>

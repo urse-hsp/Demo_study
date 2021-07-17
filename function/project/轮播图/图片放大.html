@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			ul{
+				padding: 0;
+				margin: 0;
+			}
+			li{
+				list-style: none;
+				float: left;
+				height: 150px;
+			}
+			li img{
+				width: 200px;
+				height: 150px;
+			}
+			#box{
+				width:600px;
+				margin: 100px auto;
+				height: 300px;
+				border: 1px red solid;
+				position: relative;
+			}
+			.divObj{
+				width: 600px;
+				opacity:.5;
+				background: #000000;
+			}
+			.imgObj{
+				width: 400px;
+				position: absolute;
+				left: 90px;
+				top: 40px;
+				-left: 50%;
+				-top: 50%;
+			}
+			.spanObj{
+				display: inline-block;
+				width: 18px;
+				height: 18px;
+				background:red;
+				position: absolute;
+				top: 40px;
+				right: 92px;
+				line-height: 18px;
+				text-align: center;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+	<div id="box">
+				<ul>
+					<li><img src="img/1.jpg"/></li>
+					<li><img src="img/2.jpg"/></li>
+					<li><img src="img/3.jpg"/></li>
+					<li><img src="img/4.jpg"/></li>
+					<li><img src="img/5.jpg"/></li>
+					<li><img src="img/6.jpg"/></li>
+				</ul>
+	</div>
+	<script>
+		var box = document.getElementById("box");
+		var lis = document.getElementsByTagName("li");
+		for(var i=0;i<lis.length;i++){
+			lis[i].onclick=function(){
+				//创建个div,
+				var divObj = document.createElement("div");
+					divObj.className="divObj";
+					box.appendChild(divObj);
+				//创建个img
+				var imgObj = document.createElement("img");
+					imgObj.className="imgObj";
+					imgObj.src=this.firstChild.getAttribute("src");
+					box.appendChild(imgObj);
+				//创建个<span></span>
+				var spanObj = document.createElement("span");
+					spanObj.className="spanObj";
+					spanObj.innerHTML="X";
+					box.appendChild(spanObj)
+				//设置关闭
+				spanObj.onclick=function(){
+					box.removeChild(divObj);
+					box.removeChild(spanObj);
+					box.removeChild(imgObj);
+				}
+			}
+		}
+		
+	</script>
+	</body>
+</html>

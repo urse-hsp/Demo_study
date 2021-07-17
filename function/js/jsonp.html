@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		
+        <button type="button" id="btn" onclick="fn()">获取验证码</button>
+        <script src="./js/jquery-3.4.1.min.js"></script>
+        <script src="./js/axios.min.js"></script>
+        <script type="text/javascript">
+            // $.ajax({
+            //     type: "post",
+            //     async: false,
+            //     url: "https://m.bestcake.com/json1811.ashx?v=1587395096770&c=NsCakeCenter&m=GetJdListNew",
+            //     dataType: "jsonp",
+            //     jsonp: "callback",//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+            //     jsonpCallback:"flightHandler",//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名
+            //     success: function(res){
+            //         console.log(res)
+            //         // alert('您查询到航班信息：票价： ' + json.price + ' 元，余票： ' + json.tickets + ' 张。');
+            //     },
+            //     error: function(){
+            //         alert('fail');
+            //     }
+            // });
+			// console.log($("#btn"))
+            axios({
+                method:"post",
+                dataType: "jsonp",
+                url: "https://m.bestcake.com/json1811.ashx?v=1587395096770&c=NsCakeCenter&m=GetJdListNew"
+            }).then((res)=>{
+                console.log(res)
+            })
+		</script>
+	</body>
+</html>

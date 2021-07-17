@@ -1,0 +1,13 @@
+vue类型的项目。里面在 .vue重写入style样式。可以正常使用lang="less",scoped 但是只支持H5，小程序方面不支持，还是需要单独引入样式表
+
+    "dev:weapp":      微信小程序 版本
+    "dev:swan":       百度小程序 版本
+    "dev:alipay":     支付宝小程序 版本
+    "dev:tt":         字节跳动、  
+    "dev:h5":         H5 版本
+    "dev:rn":         ReactNative 版本
+    "dev:qq":         QQ 小程序 版本
+    "dev:jd":         京东 小程序 版本
+    "dev:quickapp":   快应用 版本
+
+    开发模式 dev

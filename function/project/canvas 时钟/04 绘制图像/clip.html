@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>图像裁切</title>
+  <style>
+	*{padding:0;margin:0;}
+	.container{width:800px;margin:20px auto; border:1px #BD3E00 solid;}
+  </style>
+ </head>
+ <body>
+  <div class="container">
+	<canvas id="canvas" height="600" width="800"></canvas>
+  </div>
+ </body>
+ <script>
+	//获得画布 对象
+	var canvas = document.getElementById("canvas");
+	var context = canvas.getContext("2d");
+	
+
+	context.beginPath();
+	context.moveTo(20,20);
+	context.lineTo(750,20);
+	context.lineTo(20,500);
+	context.lineTo(700,500);
+	context.strokeStyle = "#BD3E00";
+	context.lineWidth="2";
+    context.fill();
+	context.closePath();
+	context.stroke();
+	context.clip();
+	//添加背景图
+	var img = new Image();
+	img.src = "img/clock.jpg";
+	context.drawImage(img,0,0);
+	
+	
+ </script>
+</html>

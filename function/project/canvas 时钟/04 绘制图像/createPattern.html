@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>createPattern方法</title>
+  <style>
+	*{padding:0;margin:0;}
+	.container{width:800px;margin:20px auto;}
+  </style>
+ </head>
+ <body>
+  <div class="container">
+	<canvas id="canvas" height="600" width="800" style="background:#eee;"></canvas>
+  </div>
+ </body>
+ <script>
+	//获得画布 对象
+	var canvas = document.getElementById("canvas");
+	var context = canvas.getContext("2d");
+	
+
+	//设置图像平铺
+	var img = new Image();
+	img.src = "img/icon.jpg";
+	img.onload = function(){
+		/*  type=no-repeat  */
+		//var ct = context.createPattern(img,"no-repeat");
+		
+		/*  type=repeat-x  */
+		//var ct = context.createPattern(img,"repeat-x");
+		
+		/*  type=repeat-y  */
+		//var ct = context.createPattern(img,"repeat-y");
+		
+
+		/*  type=repeat  */
+		var ct = context.createPattern(img,"repeat");
+		
+		context.fillStyle = ct;
+		context.fillRect(0,0,800,600);
+	};
+ </script>
+</html>

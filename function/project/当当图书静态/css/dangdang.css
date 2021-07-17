@@ -1,0 +1,357 @@
+		 /* 导航部分 */
+.nav{
+	background: red;
+	line-height: 32px;
+}
+.nav ul li{
+	display: inline-block;
+	margin: 0px 14px;
+	font-size: 14px;
+}
+.nav a{
+	color: #FFFFFF;
+	text-decoration: none;
+	font-weight: bold;
+}
+.nav a:hover{
+	color: #000000;
+}
+.nav ul li:nth-child(1){
+	width:170px;
+	text-align: center;
+	background: url(../img/home_sprite.png) no-repeat 150px -570px;
+}
+
+/* //中间正文 */
+.main{
+	margin-top: 20px;
+	clear: both;
+}
+.content{
+	overflow: hidden;
+	margin: 0;
+}
+.main .content .content-box1{
+	width: 750px;
+	height: 315px;
+	position: relative;
+}
+.main .content .content-box1 ul li{
+	list-style: none;
+	display: inline-block;
+	width: 20px;
+	line-height: 20px;
+	background: #FFFFFF;
+	border-radius: 50%;
+	text-align: center;
+	margin: 0px 2px;
+}
+.main .content .content-box1 ul{
+	position: absolute;
+	right: 43px;
+	bottom: 15px;
+}
+.main .content .content-box1 ul li:nth-child(1){
+	background: #E9185A;
+	color: white;
+}
+.main .content .content-box2{
+	width: 750px;
+	height: 315px;
+	margin-top: 10px;
+}
+.main .content .content-box2 div{
+	width: 185px;
+	height: 240px;
+	float: left;
+	margin-top: 15px;
+}
+.main .content .content-box2 div dl{
+	margin-top: 20px;
+	margin-left: 15px;
+}
+.main .content .content-box2 div strong{
+	font-size: 14px;
+	margin-left: 15px;
+}
+.main .content .content-box2 div dt{
+	font-size: 12px;
+	color: #999999;
+	margin-bottom: 5px;
+}
+.main .content .content-box2 div dd{
+	color: red;
+	font-weight: bold;
+	font-size: 15px;
+}
+.main .content .content-box2 div dd span{
+	color: #999999;
+	text-decoration: line-through;
+}
+.main .content .content-box2 div a{
+	text-decoration: none;
+	color: #000000;
+}
+.main .content .content-box2-1{
+	position: relative;
+}
+.main .content .content-box2-1 div img{
+	position: absolute;
+	right:45px;
+	top: 0;
+}
+
+/* 左侧边栏 */
+.main-left{
+	float: left;
+	width: 200px;
+	border: 1px solid #009900;
+	margin-left: 10px;
+}
+.main-left h2{
+	background: #487A6f;
+	color: white;
+	font-size: 20px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	border-bottom: 2px white dotted;
+}
+.main-left div{
+	padding: 5px 10px 0px 10px;
+}
+.main-left div dt a{
+	text-decoration: none;
+	color:  #487A6f;
+	font-weight: bold;
+	font-size: 16px;
+}
+.main-left div dt a:hover{
+	text-decoration: underline;
+}
+.main-left div dd a{
+	text-decoration: none;
+	color: #666666;
+	font-size: 13px;
+}
+.main-left div dd a:hover{
+	color: red;
+}
+.main-left div dl{
+	padding-bottom: 6px;
+	margin:2px 0px;
+	border-bottom: 1px dotted #666666;
+	
+}
+.main-left div dl:last-of-type{
+	border-bottom:none;
+	padding: 0px;
+}
+.main-left div dt{
+	margin:3px 0px 2px 0px;
+}
+
+/* 右侧边栏 */
+.mian-right{
+	height: 316px;
+	float: right;
+}
+.mian-right-top{
+	width: 218px;
+	border: 1px solid #E1E1E2;
+	padding-bottom: 7px;
+	padding-top: 8px;
+	margin-bottom: 10px;
+}
+.mian-right-top h3{
+	color: #000000;
+	text-indent:9px;
+}
+.mian-right-top h3:hover{
+	text-decoration: underline;
+}
+.mian-right-top a{
+	font-size: 12px;
+	text-decoration: none;
+	color: #000000;
+}
+.mian-right-top a:hover{
+	color: #E4373B;
+}
+.mian-right-top p{
+	padding-left:13px ;
+	background: url(../img/sprite.png)no-repeat -11px -158px;
+}
+
+.mian-right-bottom{
+	box-sizing: border-box;
+	height: 205px;
+	width: 218px;
+	border: 1px solid #E1E1E2;
+	padding-top: 5px;
+	display: inline-block;
+	padding-right: 2px;
+	position: relative;
+}
+.mian-right-bottom h3{
+	color: #000000;
+	text-indent:9px;
+	font-size: 15px;
+	margin-bottom: 30px;
+}
+.mian-right-bottom h3 a{
+	color: #0077CC;
+	font-size: 5px;
+	float: right;
+	margin-right: 5px;
+	font-weight: normal;
+	text-decoration: none;
+}
+.mian-right-bottom h3 a:hover{
+	color: #E4373B;
+}
+.mian-right-bottom .box1{
+	float: left;
+	display: inline-block;
+}
+.mian-right-bottom .box1 img{
+	width: 110px;
+	height: 110px;
+}
+ .mian-right-bottom h3 a{
+	font-size: 12px;
+} 
+ .mian-right-bottom p{
+	 padding-top: 13px;
+	 padding-right:5px;
+ }
+.mian-right-bottom p a{
+	 font-size:10px;
+	 color: #000000;
+	 text-decoration: none;
+ }
+.mian-right-bottom p a:hover{
+	color: #E4373B;
+}
+.mian-right-bottom strong{
+	  font-size: 13px;
+	  color:#CC0033;
+  }
+.mian-right-bottom strong span{
+	   color: #999999;
+	   text-decoration: line-through;
+}
+.mian-right-bottom ul li{
+	list-style: none;
+	display: inline-block;
+	width: 11px;
+	height: 11px;
+	background: #888888;
+	border-radius: 50%;
+	margin: 0px 1px;
+}
+.mian-right-bottom ul{
+	position: absolute;
+	bottom: 10px;
+	right: 72px;
+}
+.mian-right-bottom ul li:nth-child(1){
+	background: #0077CC;
+}
+.mian-right-bottom .btn{
+	display: inline-block;
+	width: 25px;
+	height: 49px;
+	background: url(../img/book_fanye_btn.png)no-repeat 0 0;
+	position: absolute;
+	left: 0;
+	top: 85px;
+}
+.mian-right-bottom .btn2{
+	display: inline-block;
+	width: 25px;
+	height: 49px;
+	background: url(../img/book_fanye_btn.png)no-repeat -27px 0;;
+	position: absolute;
+	right: 0;
+	top: 85px;
+}
+.mian-right-bottom .btn:hover{
+	background: url(../img/book_fanye_btn.png)no-repeat 0 -51px;
+}
+.mian-right-bottom .btn2:hover{
+	background: url(../img/book_fanye_btn.png)no-repeat -27px -51px;;
+}
+
+.main .aside3{
+	display: inline-block;
+	width: 218px;
+	float: right;
+	position: relative;
+	top: -554px;
+}
+.aside3 h3{
+	display: inline-block;
+	text-indent: 30px;
+	line-height: 30px;
+	background: url(../img/sprite.png)no-repeat 0 0;
+	padding-bottom: 5px;
+}
+.aside3 .aside3-box{
+	width: 218px;
+	border: 1px solid #E1E1E2;
+}
+.aside3 .aside3-box p a{
+	display: inline-block;
+	width: 43px;
+	text-align: center;
+	color: #666666;
+	font-size: 13px;
+	text-decoration: none;
+	border-left:1px solid #E1E1E2 ;
+	line-height: 23px;
+	border-bottom:1px solid #E1E1E2 ;
+}
+.aside3 .aside3-box p{
+	float: right;
+	margin-bottom: 5px;
+}
+.aside3 .aside3-box p a:nth-child(1){
+	border: transparent;
+	color: #008000;
+	text-decoration: underline;
+}
+.aside3 .aside3-box ul li{
+	list-style: none;
+	border-bottom: 1px dotted #666666;
+	padding:3px;
+	line-height: 30px;
+}
+.aside3 .aside3-box ul li a{
+	font-size: 13px;
+	text-decoration: none;
+	color: #000000;
+}
+.aside3 .aside3-box ul li a:hover{
+	color: #E4373B;
+}
+.aside3 .aside3-box ul li img{
+	float: left;
+	width: 100px;
+	height: 100px;
+}
+.aside3 .aside3-box ul li div{
+	margin-top: 10px;
+	display: inline-block;
+	display: none;
+}
+.aside3 .aside3-box ul li:hover div{
+	display: block;
+}
+.aside3 .aside3-box ul li div span{
+	color: #008000;
+	display: inline-block;
+	margin-top: 5px;
+	text-indent: 10px;
+	text-decoration: underline;
+}

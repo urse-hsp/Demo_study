@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="jquery-3.min.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		.bg-light-blue {
+			background-color: red;
+
+		}
+	</style>
+</head>
+
+<body>
+
+	<div>
+		<button class="changChick"">高</button>
+	<button class=" changChick"">中</button>
+		<button class="changChick"">低</button>
+	<p id=" p"></p>
+	</div>
+
+	<script type="text/javascript">
+		function changChick(target) {
+			let a = 0
+			$.each($(".changChick"), function (i, val) {
+				$(".changChick:first-child").addClass("bg-light-blue");
+				console.log($(".changChick")[0])
+				$('#p').html(`${a}`)
+				$(val).click(function () {
+					a = i
+					$('#p').html(`${a}`)
+					$(val).addClass("bg-light-blue");
+					$(val).siblings().removeClass("bg-light-blue");
+				})
+			});
+		}
+		changChick()
+	</script>
+</body>
+
+</html>

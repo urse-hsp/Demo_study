@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		用户名：<input type="text" id="username" /><br />
+		密码：<input type="password" id="password" /><br />
+		<button>登录</button>
+		
+		<script type="text/javascript">
+	//封装cookie
+	
+	//创建cookie的函数
+	/*
+	 * key:需要创建的cookie名称
+	 * value：需要创建的cookie值
+	 * iDay：需要创建的cookie几天后过期（单位：天，可允许是负值）
+	 * */
+	function setCookie(key,value,iDay){
+		var dateObj = new Date();//获取当前日期
+		dateObj.setDate(dateObj.getDate()+iDay);//设置cookie过期时间为iDay天后
+		document.cookie = key+"="+value+";expires="+dateObj;//创建带有过期时间的cookie
+	}
+	
+	//删除cookie
+	/*
+	 * key:需要删除的cookie名称
+	 * */
+	function removeCookie(key){
+		var dateObj = new Date();//获取当前日期
+		dateObj.setDate(dateObj.getDate()-1);//设置cookie过期时间为昨天，访问该网页的时候浏览器会自动清除cookie
+		document.cookie = key+"=;expires="+dateObj;//创建带有过期时间的cookie，过期时间为昨天，浏览器会自动清除该条cookie
+	}
+	
+	//获取cookie
+	/*
+	 * key:需要获取的cookie名称
+	 * */
+	function getCookie(key){
+		var cookieData = document.cookie;//获取该网站下存储的全部cookie
+//		console.log(cookieData);
+//		username=susie; password=123456
+		var arr = cookieData.split(";");//将全部cookie字符串用分号分割为一条条的cookie，并作为数组赋值给arr
+		for(var i=0;i<arr.length;i++){//逐条遍历cookie数组
+			console.log(arr[i]);//控制台输出每条cookie
+			var arr1 = arr[i].split("=");//将每条cookie使用=号分割为由"名称"和"值"两个元素组成的数组
+			if(arr1[0].replace(/^(\s)/g,"")==key){//判断如果该条cookie的名称和key值相同就返回对应的值
+				return arr1[1];
+			}
+		}
+		return "";//如果找不到key对应的cookie值，则返回空字符串
+	}
+	
+			//A同学：username=susie,过期时间是30天后
+			setCookie("username","susie",30);
+			setCookie("password","123456",30);
+			//B同学：删掉A同学存的那条cookie
+			//removeCookie("username");
+			//C同学：从cookie中获取用户名和密码的值，显示在登录输入框中
+			var username = getCookie("username");
+			document.getElementById("username").value = username;
+			var password = getCookie("password");
+			document.getElementById("password").value = password;
+		</script>
+	</body>
+</html>

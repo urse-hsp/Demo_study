@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<p>用户名：<input type="text" name="" id="username" value="" /></p>
+		<p>密码：<input type="password" name="" id="password" value="" /></p>
+		<button type="button">登录</button>
+		<script type="text/javascript">
+			//封装cookie
+			//创建cookie的函数
+			function setcookie(key,value,iDAY){
+				var DateObj = new Date();
+				DateObj.setDate(DateObj.getDate()+iDAY);
+				document.cookie = key+"="+value+";expires="+DateObj;
+			}
+			
+			
+			//删除cookie 
+			function removerCookie(key){
+				var DateObj = new Date();
+				DateObj.setDate(DateObj.getDate()-1);
+				document.cookie = key+"=;expires="+DateObj;
+			}
+			// removerCookie("username")
+			
+			function getCookie(key){
+				var cookiedate = document.cookie;
+				var arr = cookiedate.split(";")
+				for(var i=0;i<arr.length;i++){
+					var arr1 = arr[i].split("=");
+					if(arr1[0].replace(/^(\s)/g,"")==key){
+						return arr1[1];
+					}
+				}
+					return "";
+			}
+			
+			setcookie("username","susie",30);
+			setcookie("password","123456789",30);
+			var username = getCookie("username");
+			document.getElementById("username").value=username;
+			var password = getCookie("password");
+			document.getElementById("password").value=password;
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//创建cookie，document.cookie = "名字=值";
+//			document.cookie = "username=susie";
+//			document.cookie = "password=123456";//JS“=”代表覆盖，cookie“=”代表添加
+			
+//			cookie的覆盖:两条cookie名字相同,最终存入的是后者
+//			document.cookie = "username=susie";
+//			document.cookie = "username=123456";
+
+			//获取cookie：document.cookie 字符串，两条cookie间以英文的分号分隔
+//			console.log(document.cookie);//username=susie; password=123456
+			
+			//删除cookie：给存入的cookie设置过期时间
+			var nowDate = new Date();
+			nowDate.setDate(nowDate.getDate()+8);
+			document.cookie = "password=123456";
+			document.cookie = "user=family;expires="+nowDate;
+			
+			nowDate.setDate(nowDate.getDate()-9);
+			document.cookie = "user=family;expires="+nowDate;
+
+			
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

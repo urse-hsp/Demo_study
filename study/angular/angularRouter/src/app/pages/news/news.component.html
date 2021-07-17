@@ -1,0 +1,25 @@
+<p>news works!</p>
+<h1>我是新闻页面</h1>
+
+<!--  -->
+<p>js跳转</p>
+<button (click)="toContent()">动态跳转</button>
+<button (click)="toContent2()">函数跳转</button>
+
+<ul>
+  <h1>Get传值</h1>
+  <li *ngFor="let item of list; let key = index">
+    <a [routerLink]="['/news/content']" [queryParams]="{ id: key }">{{
+      item
+    }}</a>
+  </li>
+</ul>
+
+<!-- <a [routerLink]="['/path', routeParam]">name</a> -->
+<ul>
+  <h1>动态传值</h1>
+  <li *ngFor="let item of list; let key = index">
+    <!-- <a [routerLink]="['/news/content']" [queryParams]="{aid: key}">{{ item }}</a> -->
+    <a [routerLink]="['/news/content/', key]">{{ item }}</a>
+  </li>
+</ul>
