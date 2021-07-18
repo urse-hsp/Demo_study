@@ -1,0 +1,15 @@
+import { observer, inject } from 'mobx-react'
+
+
+@inject('counter', 'user')
+@observer
+class 模式 只能放在class类名上面
+
+
+
+export default inject('counter', 'user')(observer(Index))
+纯函数组件
+
+
+// inject('store') 挂载整个store实例  但是app.js下 Provider store必须是个对象 store={store}
+或者 {...store} 全部分散挂载到app实例上，  组件根据需要引入
